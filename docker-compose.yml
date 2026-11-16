@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: toolshop-db
+    environment:
+      POSTGRES_USER: toolshop
+      POSTGRES_PASSWORD: toolshop
+      POSTGRES_DB: toolshop
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

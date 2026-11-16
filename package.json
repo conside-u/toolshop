@@ -1,0 +1,20 @@
+{
+  "name": "toolshop",
+  "version": "0.1.0",
+  "description": "ToolShop — міні-магазин інструментів (курсовий проєкт)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}

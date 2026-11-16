@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToolShop</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
+    button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+    #status { color: #b00020; }
+    li { padding: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>ToolShop</h1>
+  <button id="load">Load items</button>
+  <p id="status"></p>
+  <ul id="items"></ul>
+
+  <script>
+    const list = document.getElementById("items");
+    const status = document.getElementById("status");
+
+    document.getElementById("load").addEventListener("click", async () => {
+      status.textContent = "";
+      list.innerHTML = "";
+      try {
+        const res = await fetch("/items");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const items = await res.json();
+        for (const item of items) {
+          const li = document.createElement("li");
+          li.textContent = `${item.id}. ${item.name}`;
+          list.appendChild(li);
+        }
+        if (items.length === 0) status.textContent = "Товарів немає";
+      } catch (err) {
+        status.textContent = `Не вдалося завантажити: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
