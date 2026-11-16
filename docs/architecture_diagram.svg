@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrow-dash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text x="40" y="48" font-size="26" font-weight="700" fill="#1f2933">ToolShop — архітектура системи</text>
+  <text x="40" y="76" font-size="15" fill="#6b7280">Суцільні блоки — вже реалізовано, пунктирні — заплановані модулі</text>
+
+  <!-- Client -->
+  <rect x="40" y="200" width="230" height="150" rx="10" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+  <text x="155" y="240" font-size="20" font-weight="700" text-anchor="middle" fill="#0c4a6e">Client</text>
+  <text x="155" y="268" font-size="14" text-anchor="middle" fill="#0c4a6e">Браузер</text>
+  <text x="155" y="292" font-size="14" text-anchor="middle" fill="#0c4a6e">HTML + JavaScript</text>
+  <text x="155" y="316" font-size="14" text-anchor="middle" fill="#0c4a6e">(public/index.html)</text>
+
+  <!-- Backend -->
+  <rect x="360" y="110" width="480" height="420" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="600" y="145" font-size="20" font-weight="700" text-anchor="middle" fill="#7c2d12">Backend API</text>
+  <text x="600" y="168" font-size="14" text-anchor="middle" fill="#7c2d12">Node.js + Express (server.js)</text>
+
+  <rect x="390" y="190" width="200" height="70" rx="8" fill="#ffffff" stroke="#c2410c" stroke-width="2"/>
+  <text x="490" y="221" font-size="16" font-weight="600" text-anchor="middle" fill="#1f2933">Items / Catalog</text>
+  <text x="490" y="243" font-size="13" text-anchor="middle" fill="#6b7280">GET /items</text>
+
+  <rect x="610" y="190" width="200" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="710" y="221" font-size="16" font-weight="600" text-anchor="middle" fill="#4b5563">Auth</text>
+  <text x="710" y="243" font-size="13" text-anchor="middle" fill="#6b7280">вхід, ролі</text>
+
+  <rect x="390" y="285" width="200" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="490" y="316" font-size="16" font-weight="600" text-anchor="middle" fill="#4b5563">Orders</text>
+  <text x="490" y="338" font-size="13" text-anchor="middle" fill="#6b7280">замовлення, статуси</text>
+
+  <rect x="610" y="285" width="200" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="710" y="316" font-size="16" font-weight="600" text-anchor="middle" fill="#4b5563">Payments</text>
+  <text x="710" y="338" font-size="13" text-anchor="middle" fill="#6b7280">імітація оплати</text>
+
+  <rect x="390" y="380" width="420" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="600" y="411" font-size="16" font-weight="600" text-anchor="middle" fill="#4b5563">Notifications</text>
+  <text x="600" y="433" font-size="13" text-anchor="middle" fill="#6b7280">email покупцю про статус замовлення</text>
+
+  <text x="600" y="500" font-size="13" text-anchor="middle" fill="#7c2d12">модульний моноліт: один застосунок, модулі за піддоменами</text>
+
+  <!-- Database -->
+  <path d="M930,215 a110,24 0 0,1 220,0 v120 a110,24 0 0,1 -220,0 z" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <ellipse cx="1040" cy="215" rx="110" ry="24" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
+  <text x="1040" y="275" font-size="20" font-weight="700" text-anchor="middle" fill="#064e3b">Database</text>
+  <text x="1040" y="300" font-size="14" text-anchor="middle" fill="#064e3b">PostgreSQL 16</text>
+  <text x="1040" y="322" font-size="14" text-anchor="middle" fill="#064e3b">у Docker</text>
+
+  <!-- Email provider (future, external) -->
+  <rect x="930" y="430" width="220" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="1040" y="461" font-size="16" font-weight="600" text-anchor="middle" fill="#4b5563">Email-сервіс</text>
+  <text x="1040" y="483" font-size="13" text-anchor="middle" fill="#6b7280">зовнішній (SMTP)</text>
+
+  <!-- Arrows -->
+  <line x1="270" y1="240" x2="385" y2="225" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="278" y="215" font-size="13" fill="#374151">HTTP / JSON</text>
+
+  <line x1="840" y1="262" x2="925" y2="262" stroke="#374151" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="846" y="252" font-size="13" fill="#374151">SQL</text>
+
+  <line x1="810" y1="415" x2="925" y2="460" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow-dash)"/>
+
+  <!-- Legend -->
+  <rect x="40" y="575" width="40" height="22" rx="4" fill="#ffffff" stroke="#c2410c" stroke-width="2"/>
+  <text x="92" y="592" font-size="14" fill="#374151">реалізовано</text>
+  <rect x="200" y="575" width="40" height="22" rx="4" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="252" y="592" font-size="14" fill="#374151">заплановано</text>
+</svg>
